@@ -172,20 +172,11 @@ When it comes to building applications that others will use, if a Ruby
 application relies on a gem, anyone using that app will need to install the gem
 to get the application to function correctly.
 
-To make this process easy, we use a `Gemfile`. A `Gemfile` in Ruby performs some
-of the same functions as a `package.json` file in JavaScript: it's where you
-list all the gem dependencies for your application, as well as the source where
-they can be downloaded, allowing _other users_ to quickly install all the gems
-at once. We do this using [Bundler][], typing `bundle install` in the terminal
-while in a Ruby application directory. Bundler will install any gems listed.
-
-> **Note**: Running `bundle install` in a directory with a `Gemfile` is very
-> much like `npm install` in JavaScript application with a `package.json` file,
-> with one key difference: `npm install` downloads JavaScript code to the same
-> directory as your project, while `bundle install` downloads the Ruby code to
-> one pre-defined directory on your system. This makes setting up Ruby
-> applications faster, since you typically only need to install each gem version
-> one time.
+To make this process easy, we use a `Gemfile`. A `Gemfile` is where you list all
+the gem dependencies for your application, as well as the source where they can
+be downloaded, allowing _other users_ to quickly install all the gems at once.
+We do this using [Bundler][], typing `bundle install` in the terminal while in a
+Ruby application directory. Bundler will install any gems listed.
 
 Bundler _itself_ is a Ruby gem, which should already be installed on your
 system. You can make sure you have the latest version by running:
@@ -374,10 +365,9 @@ terminal. This will install the listed gems for you. They won't show up in the
 directory, but they are in your system, and available.
 
 Running `bundle install` also creates a new file: `Gemfile.lock`. This file
-notes which specific gem versions were installed, like `package-lock.json` in
-JavaScript applications. If this file is committed and included in a project,
-Bundler will default to using the **exact versions** listed in this file when
-installing gems.
+notes which specific gem versions were installed. If this file is committed and
+included in a project, Bundler will default to using the **exact versions**
+listed in this file when installing gems.
 
 ### Working with `config/environment.rb`
 
